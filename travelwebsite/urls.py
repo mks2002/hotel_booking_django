@@ -15,21 +15,25 @@ Including another URLconf
 """
 
 
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path
+
+# since here we use the view.py of mainapp application we write here if we copy the entire code of the mainapp.view in any other application view then we have to write that...
+
 from mainapp import views
 
+from hotellist import views
 
 
 admin.site.site_header = "Hotel administration and managment"
 admin.site.site_title = "Hotel administration and managment"
 admin.site.index_title = "Hotel administration and managment"
 
-from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns = [
-    
+
     path('admin/', admin.site.urls),
     path('', views.homepage, name='home'),
     path('about/', views.about, name='about'),
@@ -39,7 +43,7 @@ urlpatterns = [
     path('bookings/', views.bookings, name='booking'),
     path('login/', views.login, name='login'),
     # this is for update the password..
-    path('update/',views.update,name='update'),
+    path('update/', views.update, name='update'),
     path('signup/', views.signup, name='signup'),
     path('blogs/', views.blog, name='blog'),
     path('travel_details/', views.travel, name='travel'),
@@ -47,7 +51,7 @@ urlpatterns = [
     path('dashboard/delete/', views.delete, name='delete'),
     path('hotellist/<username>/<password>/<hotelstate>',
          views.hotellist, name='hotellist'),
-    path('details/',views.details,name='order_details'),     
+    path('details/', views.details, name='order_details'),
 ]
 
 
