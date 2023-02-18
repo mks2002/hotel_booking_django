@@ -10,21 +10,18 @@
     overflow-y: auto;
     z-index: 30;
     margin-bottom: 0;
-
   }
 
   .myimage {
-      border: 2.5px solid var(--secondary-color);
-      border-radius: 15px;
-      margin-right:40px;
-    }
- 
-  </style>
+    border: 2.5px solid var(--secondary-color);
+    border-radius: 15px;
+    margin-right: 40px;
+  }
+</style>
 
 {% endblock style %} {% block content1 %}
 
 <div class="travel mb-0" style="">
-
   <div class="container-my p-3 py-5">
     <h2 class="text-center mb-5">Book <span class="auto-type"></span></h2>
     <h2 class="text-center mt-2">
@@ -68,7 +65,8 @@
           <td>
             <a
               href="https://www.irctc.co.in/nget/train-search"
-              class="btn btn-primary" target="_blank"
+              class="btn btn-primary"
+              target="_blank"
               >Book now</a
             >
           </td>
@@ -79,55 +77,48 @@
       </tbody>
     </table>
   </div>
-
 </div>
 
-{% endblock content1 %}
+{% endblock content1 %} {% block content2 %}
 
+<section id="about">
+  <div class="container">
+    <div class="row flex-lg-row flex-column-reverse mb-0">
+      <div class="col-lg-6 text-center text-lg-start">
+        <h3>
+          Welcome to
+          <span>
+            Our Hotel <br class="d-none d-lg-block" />
+            We have
+          </span>
+          best train travel services
+        </h3>
+        <p>
+          A good hotel website should allow people to create and confirm
+          bookings online. It is not simply a contact form, but rather an online
+          reservation system installed on the website. By having a proper online
+          reservation system, people can easily check for room availability,
+          price rate, and secure the booking with payment..
+        </p>
+        <p>
+          This involves organizing content with customers in mind and making
+          sure key information such as rooms and rates, amenities, contact
+          details and online bookings are never more than a single click away.
+        </p>
+      </div>
 
-{% block content2 %}
-
-<section id="about" >
-<div class="container ">
-  <div class="row flex-lg-row flex-column-reverse mb-0">
-    <div class="col-lg-6 text-center text-lg-start">
-      <h3>
-        Welcome to
-        <span
-          > Our Hotel <br class="d-none d-lg-block" />
-          We have
-        </span>
-        best train travel services
-      </h3>
-      <p>
-        A good hotel website should allow people to create and confirm
-        bookings online. It is not simply a contact form, but rather an online
-        reservation system installed on the website. By having a proper online
-        reservation system, people can easily check for room availability,
-        price rate, and secure the booking with payment..
-      </p>
-      <p>
-        This involves organizing content with customers in mind and making
-        sure key information such as rooms and rates, amenities, contact
-        details and online bookings are never more than a single click away.
-      </p>
-    </div>
-
-    <div class="col-lg-6 mb-4 mb-lg-0 ps-lg-4 text-center mt-4">
-      <img
-        src="{% static 'images/train.jpg' %}"
-        class="img-fluid myimage"
-        alt="About Us"
-      />
+      <div class="col-lg-6 mb-4 mb-lg-0 ps-lg-4 text-center mt-4">
+        <img
+          src="{% static 'images/train.jpg' %}"
+          class="img-fluid myimage"
+          alt="About Us"
+        />
+      </div>
     </div>
   </div>
-</div>
-
 </section>
 
-{% endblock content2 %}
-
- {% block content4 %}
+{% endblock content2 %} {% block content4 %}
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   var typed = new Typed(".auto-type", {

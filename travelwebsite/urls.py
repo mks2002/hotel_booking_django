@@ -20,11 +20,14 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 
-# since here we use the view.py of mainapp application we write here if we copy the entire code of the mainapp.view in any other application view then we have to write that...
 
-from mainapp import views
-
-from hotellist import views
+# here we import all the different views of our project...
+# travelwebsite is the main project level application of this project which django by default create inside any project...
+from mainapp import views as v1
+from bookings import views as v2
+from hotellist import views as v3
+from travelwebsite import views as v4
+from userreview import views as v5
 
 
 admin.site.site_header = "Hotel administration and managment"
@@ -35,23 +38,25 @@ admin.site.index_title = "Hotel administration and managment"
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('', views.homepage, name='home'),
-    path('about/', views.about, name='about'),
-    path('services/', views.services, name='service'),
-    path('pricings/', views.price, name='price'),
-    path('staffs/', views.staffs, name='staffs'),
-    path('bookings/', views.bookings, name='booking'),
-    path('login/', views.login, name='login'),
+
+    path('', v4.homepage, name='home'),
+    path('about/', v4.about, name='about'),
+    path('services/', v4.services, name='service'),
+    path('pricings/', v4.price, name='price'),
+    path('staffs/', v4.staffs, name='staffs'),
+    path('bookings/', v2.bookings, name='booking'),
+    path('login/', v1.login, name='login'),
     # this is for update the password..
-    path('update/', views.update, name='update'),
-    path('signup/', views.signup, name='signup'),
-    path('blogs/', views.blog, name='blog'),
-    path('travel_details/', views.travel, name='travel'),
-    path('dashboard/', views.dashboard, name='dashboard'),
-    path('dashboard/delete/', views.delete, name='delete'),
+    path('update/', v1.update, name='update'),
+    path('signup/', v1.signup, name='signup'),
+    path('travel_details/', v4.travel, name='travel'),
+    path('dashboard/', v2.dashboard, name='dashboard'),
+    path('dashboard/delete/', v2.delete, name='delete'),
     path('hotellist/<username>/<password>/<hotelstate>',
-         views.hotellist, name='hotellist'),
-    path('details/', views.details, name='order_details'),
+         v3.hotellist, name='hotellist'),
+    path('details/', v2.details, name='order_details'),
+    path('review/<username>/<password>', v5.review, name='review'),
+    path('blogs/', v5.blog, name='blog'),
 ]
 
 

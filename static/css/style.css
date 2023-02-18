@@ -780,6 +780,7 @@ p {
 
 .footer_wrapper .copyright-section a {
    color: var(--secondary-text);
+  
 }
 
 
@@ -902,6 +903,8 @@ body .travel table {
 
 }
 
+
+
 .mydiv table {
    font-size: 1.1rem;
    font-weight: 500;
@@ -910,7 +913,7 @@ body .travel table {
 /* this is our custom class to override the color of h3 in dashboard page... */
 .myuser {
    color: var(--secondary-color);
- 
+
 }
 
 /* this is the css for the hotelist page... */

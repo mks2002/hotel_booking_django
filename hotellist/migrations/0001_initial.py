@@ -14,12 +14,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Hotellist',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=80)),
                 ('city', models.CharField(max_length=40)),
                 ('state', models.CharField(max_length=60)),
                 ('star', models.IntegerField(default=0)),
-                ('image', models.FileField(default=None, max_length=2500, null=True, upload_to='image_folder/')),
+                ('image', models.FileField(default=None,
+                 max_length=2500, null=True, upload_to='image_folder/')),
                 ('current_cost', models.FloatField()),
                 ('delete_cost', models.FloatField()),
             ],
