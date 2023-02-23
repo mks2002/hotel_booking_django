@@ -1,9 +1,9 @@
 
 # this views render all tha project level apps which are common to entire project and not required any model query ...
+# this view file is we dont get by default because it is not an application it is the main folder inside our main project this view file I created myself...
 
 
 # import all basic rendering and redirecting modules...
-from userreview.models import Review
 from django.http import HttpResponse
 from django.shortcuts import render
 

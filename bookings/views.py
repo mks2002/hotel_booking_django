@@ -16,16 +16,6 @@ from bookings.models import Bookinghotel
 # from mainapp.models import Login
 
 
-# this page is for deleting the order...
-def delete(request):
-    id1 = request.GET.get('id1')
-    un = request.GET.get('name')
-    pw = request.GET.get('pw')
-    Bookinghotel.objects.filter(id=id1).delete()
-    url = '/dashboard/?name={}&pw={}'.format(un, pw)
-    return HttpResponseRedirect(url)
-
-
 # this page is for bookign hotels....
 def bookings(request):
     data = {}
@@ -134,3 +124,17 @@ def details(request):
                 'maindata': maindata, 'url': url, 'cost': total_cost}
         return render(request, 'order_details.html', data)
     return render(request, 'order_details.html', data)
+
+
+
+# this page is for deleting the order...
+def delete(request):
+    id1 = request.GET.get('id1')
+    un = request.GET.get('name')
+    pw = request.GET.get('pw')
+    Bookinghotel.objects.filter(id=id1).delete()
+    url = '/dashboard/?name={}&pw={}'.format(un, pw)
+    return HttpResponseRedirect(url)
+
+
+
