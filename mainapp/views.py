@@ -49,8 +49,9 @@ def signup(request):
                 cname = "alert-success"
                 data = {'n': n,
                         'bool': bool, 'cname': cname}
-                return render(request, 'signup.html', data)
-
+                hl = "all"
+                url = "/hotellist/{}/{}/{}".format(un, pw, hl)
+                return HttpResponseRedirect(url)
     return render(request, 'signup.html', data)
 
 
