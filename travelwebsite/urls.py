@@ -57,6 +57,7 @@ urlpatterns = [
     path('details/', v2.details, name='order_details'),
     path('review/<username>/<password>', v5.review, name='review'),
     path('blogs/', v5.blog, name='blog'),
+    path('logout/',v1.logout,name='logout'),
 ]
 
 

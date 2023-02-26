@@ -50,8 +50,9 @@ def signup(request):
                 data = {'n': n,
                         'bool': bool, 'cname': cname}
                 hl = "all"
-                url = "/hotellist/{}/{}/{}".format(un, pw, hl)
-                return HttpResponseRedirect(url)
+                # url = "/hotellist/{}/{}/{}".format(un, pw, hl)
+                # return HttpResponseRedirect(url)
+                return render(request, 'signup.html', data)
     return render(request, 'signup.html', data)
 
 
@@ -83,6 +84,11 @@ def login(request):
                     'bool': bool}
             return render(request, 'login.html', data)
     return render(request, 'login.html', data)
+
+
+
+def logout(request):
+    return HttpResponse('hello i am logout')
 
 
 # this page is for changing the password...

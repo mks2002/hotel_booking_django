@@ -52,4 +52,5 @@ def hotellist(request, username, password, hotelstate):
         datamain = {"un": username, "pw": password, "url": url, "data": data}
         return render(request, "hotellist.html", datamain)
     else:
-        return HttpResponse('404 bad request! you are not registered ...')    
+        # return HttpResponse('404 bad request! you are not registered ...')   
+        return HttpResponseRedirect('/login/') 
